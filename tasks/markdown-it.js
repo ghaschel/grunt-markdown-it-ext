@@ -4,27 +4,7 @@
  */
 
 'use strict';
-var hljs = require('highlight.js');
-
-var md = require('markdown-it')({
-  html:         true,        // Enable HTML tags in source
-  xhtmlOut:     true,        // Use '/' to close single tags (<br />).
-                              // This is only for full CommonMark compatibility.
-  breaks:       true,        // Convert '\n' in paragraphs into <br>
-  highlight: function (str, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return hljs.highlight(lang, str).value;
-      } catch (err) {}
-    }
-
-    try {
-      return hljs.highlightAuto(str).value;
-    } catch (err) {}
-
-    return ''; // use external default escaping
-  }
-});
+var md = require('markdown-it')();
 
 module.exports = function(grunt) {
 
@@ -35,7 +15,14 @@ module.exports = function(grunt) {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       punctuation: '.',  // FIXME remove
-      separator: ', ' // FIXME remove
+      separator: ', ', // FIXME remove
+      extensions: []
+    });
+
+    md.set(options);
+
+    options.extensions.forEach(function (ext) {
+        md.use(ext);
     });
 
     // Iterate over all specified file groups.

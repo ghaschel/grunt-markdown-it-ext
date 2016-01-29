@@ -1,7 +1,7 @@
 {
   "name": "grunt-markdown-it",
   "description": "markdown-it (markdown parser) grunt plugin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "licenses": "MIT",
   "engines": {
     "node": ">= 0.8.0"
