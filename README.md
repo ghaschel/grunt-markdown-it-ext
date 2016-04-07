@@ -1,7 +1,6 @@
 # grunt-markdown-it-ext
 
-> Grunt Markdown-it Extended
-> markdown-it (markdown parser) grunt plugin
+> Grunt Markdown-it Extended - markdown-it (markdown parser) grunt plugin
 
 ## Getting Started
 
