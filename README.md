@@ -3,6 +3,9 @@
 > markdown-it (markdown parser) grunt plugin
 
 ## Getting Started
+
+This is a fork from the [original package](https://github.com/ThePacielloGroup/grunt-markdown-it).
+
 This plugin requires Grunt `~0.4.5`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
@@ -49,35 +52,58 @@ Default value: `'.'`
 
 A string value that is used to do something else with whatever else.
 
+#### options.extensions
+Type: `Object`
+Default value: `null`
+
+An object requiring a markdown-it plugin. eg. `require('markdown-it-emoji')`
+
+#### options.bootstrap
+Type: `boolean`
+Default value: `false`
+
+If set true, a `<link>` tag pointing to MaxCDN's bootstrap files will be added.
+
+#### options.docTitle
+Type: `String`
+Default value: `Readme.md`
+
+Title to be shown at the `readme.html` preview.
+
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+In this example, the default options are used to generate a basic Markdown preview.
 
 ```js
 grunt.initConfig({
-  markdown-it: {
+  'markdown-it': {
     options: {},
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+      src:'README.md',
+      dest: 'readme.html'
+    }
   },
 });
 ```
 
 #### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+In this example, custom options are used to do generate a Markdown file with a custom title, bootstrap reset and unicode emoji support.
 
 ```js
 grunt.initConfig({
-  markdown-it: {
+  'markdown-it': {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      bootstrap: true,
+      docTitle: 'This is a custom title',
+      extensions: [
+        require('markdown-it-emoji') //npm install markdown-it-emoji
+      ]
     },
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+      src:'app/assets/README.md',
+      dest: 'public/assets/readme.html'
+    }
   },
 });
 ```
@@ -86,4 +112,8 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+* 0.2.3
+  * Added HTML Wrap
+  * Added Bootstrap support
+  * Added Custom title support
+* 0.2.0 Initial fork
