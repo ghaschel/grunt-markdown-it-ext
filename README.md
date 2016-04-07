@@ -1,5 +1,6 @@
-# grunt-markdown-it
+# grunt-markdown-it-ext
 
+> Grunt Markdown-it Extended
 > markdown-it (markdown parser) grunt plugin
 
 ## Getting Started
@@ -11,13 +12,13 @@ This plugin requires Grunt `~0.4.5`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-markdown-it --save-dev
+npm install grunt-markdown-it-ext --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-markdown-it');
+grunt.loadNpmTasks('grunt-markdown-it-ext');
 ```
 
 ## The "markdown-it" task
@@ -112,7 +113,7 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-* 0.2.3
+* 0.2.4
   * Added HTML Wrap
   * Added Bootstrap support
   * Added Custom title support

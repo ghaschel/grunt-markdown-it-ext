@@ -1,7 +1,7 @@
 {
-  "name": "grunt-markdown-it",
+  "name": "grunt-markdown-it-ext",
   "description": "markdown-it (markdown parser) grunt plugin",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "licenses": "MIT",
   "engines": {
     "node": ">= 0.8.0"
@@ -19,7 +19,10 @@
     "grunt": "~0.4.5"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "markdown-it",
+    "markdown",
+    "grunt"
   ],
   "dependencies": {
     "highlight.js": "^9.1.0",

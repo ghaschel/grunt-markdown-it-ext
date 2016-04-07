@@ -1,5 +1,5 @@
 /*
- * grunt-markdown-it
+ * grunt-markdown-it-ext
  * Licensed under the MIT license.
  */
 
