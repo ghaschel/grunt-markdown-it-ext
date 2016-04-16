@@ -1,5 +1,7 @@
 # grunt-markdown-it-ext
 
+[![npm version](https://badge.fury.io/js/grunt-markdown-it-ext.svg)](https://badge.fury.io/js/grunt-markdown-it-ext)
+
 > Grunt Markdown-it Extended - markdown-it (markdown parser) grunt plugin
 
 ## Getting Started
